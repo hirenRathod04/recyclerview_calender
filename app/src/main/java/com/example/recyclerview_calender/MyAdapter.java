@@ -1,5 +1,7 @@
 package com.example.recyclerview_calender;
 
+import android.graphics.Color;
+import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,7 +28,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.holder> {//1 and 5
 
     @Override
     public void onBindViewHolder(@NonNull holder holder, int position) {//7
-holder.textView.setText ( data[position] );
+
+
+if ( position == 0 )
+    { data[0] = "ankita";
+      holder.textView.setBackgroundColor( Color.parseColor("#FFBB86FC"));
+      holder.textView.setTextColor(Color.parseColor("#FF000000"));//updating the value
+         }
+        holder.textView.setText ( data[position] );
     }
 
     @Override
